@@ -1,5 +1,5 @@
-import img1 from "../../assets/images/home1.jpg";
-import img2 from "../../assets/images/home2.jpg";
+// import img1 from "../../assets/images/mensClot";
+import img1 from "../../assets/images/home2.jpg";
 
 const Hero = () => {
   const heroSlides = [
@@ -9,7 +9,7 @@ const Hero = () => {
       subtitle: "Up to 50% off on selected items",
     },
     {
-      image: img2,
+      image: img1,
       title: "New Arrivals",
       subtitle: "Check out our latest collection",
     },
