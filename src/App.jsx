@@ -1,11 +1,17 @@
 import { BrowserRouter as Router, Routes } from "react-router-dom";
-import Navbar from "./components/layout/Navbar"; // Adjust path as necessary
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes></Routes>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes></Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
