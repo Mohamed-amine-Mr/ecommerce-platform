@@ -3,6 +3,10 @@ import img1 from "../../assets/images/home1.jpg";
 import img2 from "../../assets/images/home2.jpg";
 import img3 from "../../assets/images/home3.jpg";
 import img4 from "../../assets/images/home4.jpg";
+import homS1 from "../../assets/images/mensClothing.webp";
+import homS2 from "../../assets/images/homeS2.jpg";
+import homS3 from "../../assets/images/homeS3.jpg";
+import homS4 from "../../assets/images/homeS4.jpg";
 import "./Hero.css";
 
 const Hero = () => {
@@ -14,25 +18,25 @@ const Hero = () => {
 
   const heroSlides = [
     {
-      image: img1,
+      image: windowSize.width < 768 ? homS1 : img1,
       title: "Summer Collection 2024",
       subtitle: "Up to 50% off on selected items",
       buttonText: "Shop Summer",
     },
     {
-      image: img2,
+      image: windowSize.width < 768 ? homS2 : img2,
       title: "New Arrivals",
       subtitle: "Check out our latest collection",
       buttonText: "Explore New",
     },
     {
-      image: img3,
+      image: windowSize.width < 768 ? homS3 : img3,
       title: "Fall Trends",
       subtitle: "Discover the latest fashion trends",
       buttonText: "Shop Trends",
     },
     {
-      image: img4,
+      image: windowSize.width < 768 ? homS4 : img4,
       title: "Winter Essentials",
       subtitle: "Stay cozy this season",
       buttonText: "Get Cozy",
@@ -42,7 +46,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 2000); //
+    }, 2000);
 
     const handleResize = () => {
       setWindowSize({
