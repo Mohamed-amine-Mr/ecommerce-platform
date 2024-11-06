@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
-// Import images from the assets folder
 import electronicsImg from "../../assets/images/electronics.webp";
 import jeweleryImg from "../../assets/images/jewelry.webp";
 import mensClothingImg from "../../assets/images/mensClothing.webp";
@@ -34,7 +33,7 @@ const Categories = () => {
           {categories.map((category) => (
             <div key={category} className="relative group cursor-pointer h-64">
               <img
-                src={categoryImages[category]} // Use the imported image URL for each category
+                src={categoryImages[category]}
                 alt={category}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
