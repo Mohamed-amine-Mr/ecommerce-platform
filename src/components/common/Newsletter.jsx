@@ -8,7 +8,7 @@ const Newsletter = () => (
         Get updates about new products and special offers
       </p>
       <div className="max-w-md mx-auto">
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap justify-center">
           <input
             type="email"
             placeholder="Enter your email"
