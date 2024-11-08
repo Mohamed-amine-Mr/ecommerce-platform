@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
 
         {/* Add to Cart Button */}
         <motion.button
-          className="w-full py-2 bg-gray-900 text-white font-semibold text-lg rounded-lg shadow-md transform transition-all duration-300 hover:bg-[#f57c00] hover:scale-105"
+          className="w-full py-2 bg-gray-900 text-white font-semibold text-lg rounded-lg shadow-md transform transition-all duration-300 hover:bg-gray-200  hover:text-black 3 hover:scale-105"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
