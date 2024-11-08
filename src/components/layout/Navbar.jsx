@@ -1,16 +1,26 @@
+import { useState } from "react";
 import logo from "../../assets/images/logo.jpg";
-
 import { Link } from "react-router-dom";
-import { ShoppingCart, User, Search } from "lucide-react";
-import { motion } from "framer-motion";
+import { ShoppingCart, User, Search, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
+  const toggleSignUp = () => {
+    setIsSignUpOpen((prev) => !prev);
+  };
+
+  const closeSignUp = () => {
+    setIsSignUpOpen(false);
+  };
+
   return (
     <motion.nav
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="bg-white w-full z-50 fixed top-0 shadow-md border-b border-gray-200"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
@@ -67,11 +77,12 @@ const Navbar = () => {
               </motion.div>
             ))}
 
-            {/* User Icon */}
+            {/* User Icon with Sign-Up Window */}
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="text-gray-600 hover:text-[#f6ad55] transition-colors duration-300"
+              onClick={toggleSignUp}
+              className="text-gray-600 hover:text-[#f6ad55] transition-colors duration-300 relative"
             >
               <User className="h-6 w-6" />
             </motion.button>
@@ -90,6 +101,68 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Sign-Up Modal */}
+      <AnimatePresence>
+        {isSignUpOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 flex items-center justify-center"
+              onClick={closeSignUp}
+            />
+
+            {/* Sign-Up Modal */}
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
+              className="relative z-50 bg-white rounded-lg shadow-lg p-8 w-[90%] max-w-md"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-semibold text-gray-800">
+                  Sign Up
+                </h2>
+                <button onClick={closeSignUp}>
+                  <X className="h-6 w-6 text-gray-600 hover:text-red-600 transition" />
+                </button>
+              </div>
+              <input
+                type="text"
+                placeholder="Username"
+                className="w-full mb-3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f6ad55]"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full mb-3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f6ad55]"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full mb-4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f6ad55]"
+              />
+              <button className="w-full py-2 bg-[#f6ad55] text-white rounded-lg font-semibold hover:bg-[#e76b00] transition-colors">
+                Register
+              </button>
+              <p className="text-sm text-gray-600 mt-4 text-center">
+                Already have an account?{" "}
+                <Link
+                  to="/login"
+                  className="text-[#f6ad55] font-medium hover:underline"
+                >
+                  Sign In
+                </Link>
+              </p>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
