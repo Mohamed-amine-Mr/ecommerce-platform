@@ -25,7 +25,7 @@ const Navbar = () => {
                 className="h-10 w-10 rounded-full shadow-md"
               />
               <span className="text-2xl font-semibold text-gray-800 hover:text-[#f6ad55] transition duration-300">
-                MERSH
+                SHUKR
               </span>
             </Link>
           </motion.div>

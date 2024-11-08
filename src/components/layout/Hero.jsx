@@ -46,7 +46,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % heroSlides.length);
-    }, 3000);
+    }, 2200);
 
     const handleResize = () => {
       setWindowSize({
@@ -103,11 +103,11 @@ const Hero = () => {
               `}
             >
               {/* Main Title with Animated Underline */}
-              <h1 className="relative text-7xl font-bold text-black mb-6 tracking-tight">
+              <h1 className="relative text-7xl font-bold text-gray-200 mb-6 tracking-tight">
                 {slide.title}
                 <span
                   className={`
-                  absolute bottom-0 left-0 w-full h-1 bg-black transform origin-left
+                  absolute bottom-0 left-0 w-full h-1 bg-gray-200 transform origin-left
                   transition-transform duration-1000 delay-500
                   ${index === currentSlide ? "scale-x-100" : "scale-x-0"}
                 `}
@@ -117,7 +117,7 @@ const Hero = () => {
               {/* Subtitle with Fade In */}
               <p
                 className={`
-                text-2xl text-black/90 mb-8 font-light tracking-wide
+                text-2xl text-gray-200/90 mb-8 font-light tracking-wide
                 transition-all duration-1000 delay-700
                 ${
                   index === currentSlide
@@ -137,7 +137,7 @@ const Hero = () => {
                 text-lg font-medium tracking-wide
                 transform transition-all duration-300
                 hover:scale-105 hover:shadow-xl
-                before:absolute before:inset-0 before:bg-white/10
+                before:absolute before:inset-0 before:bg-gray-200/10
                 before:translate-x-[-100%] before:transition-transform before:duration-300
                 hover:before:translate-x-0
                 ${
