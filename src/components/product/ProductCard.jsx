@@ -20,15 +20,24 @@ const ProductCard = ({ product }) => {
         <h3 className="text-lg font-semibold text-gray-800 mb-2 truncate">
           {product.title}
         </h3>
-        <div className="flex justify-between items-center text-gray-600">
-          <span className="text-xl font-bold text-[#f6ad55]">
+        <div className="flex justify-between items-center text-gray-500 mb-4">
+          <span className="text-xl font-bold text-gray-900">
             ${product.price.toFixed(2)}
           </span>
-          <div className="flex items-center text-yellow-400">
+          <div className="flex items-center text-yellow-500">
             <span className="text-sm">★</span>
             <span className="ml-1 text-sm">{product.rating.rate}</span>
           </div>
         </div>
+
+        {/* Add to Cart Button */}
+        <motion.button
+          className="w-full py-2 bg-gray-900 text-white font-semibold text-lg rounded-lg shadow-md transform transition-all duration-300 hover:bg-[#f57c00] hover:scale-105"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Add to Cart
+        </motion.button>
       </div>
     </motion.div>
   );
