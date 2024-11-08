@@ -6,7 +6,7 @@ import LatestProducts from "../components/product/LatestProducts";
 import Newsletter from "../components/common/Newsletter";
 
 const Home = () => (
-  <div className="min-h-screen bg-slate-700">
+  <div className="min-h-screen bg-[#efefef] pt-20">
     <Hero />
     <Categories />
     <FeaturedProducts />

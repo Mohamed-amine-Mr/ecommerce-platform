@@ -1,5 +1,5 @@
 const Newsletter = () => (
-  <div className="bg-blue-600 py-16">
+  <div className="bg-black py-16">
     <div className="container mx-auto px-4 text-center">
       <h2 className="text-3xl font-bold text-white mb-4">
         Subscribe to Our Newsletter
