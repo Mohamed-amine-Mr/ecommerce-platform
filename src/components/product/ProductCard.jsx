@@ -1,6 +1,15 @@
 import { motion } from "framer-motion";
+<<<<<<< HEAD
 
 const ProductCard = ({ product }) => {
+=======
+import { useCart } from "../../components/CartContext";
+
+const ProductCard = ({ product }) => {
+  const { addToCart, getCartQuantity } = useCart();
+  const quantity = getCartQuantity(product.id);
+
+>>>>>>> 48193fd (adding context API)
   return (
     <motion.div
       className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:scale-105"
@@ -35,8 +44,14 @@ const ProductCard = ({ product }) => {
           className="w-full py-2 bg-gray-900 text-white font-semibold text-lg rounded-lg shadow-md transform transition-all duration-300 hover:bg-gray-200  hover:text-black 3 hover:scale-105"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+<<<<<<< HEAD
         >
           Add to Cart
+=======
+          onClick={() => addToCart(product.id)}
+        >
+          Add to Cart ({quantity})
+>>>>>>> 48193fd (adding context API)
         </motion.button>
       </div>
     </motion.div>

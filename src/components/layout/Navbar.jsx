@@ -3,8 +3,16 @@ import logo from "../../assets/images/logo.jpg";
 import { Link } from "react-router-dom";
 import { ShoppingCart, User, Search, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+<<<<<<< HEAD
 
 const Navbar = () => {
+=======
+import { useCart } from "../../components/CartContext";
+const Navbar = () => {
+  const { getTotalCartQuantity } = useCart();
+  const totalQuantity = getTotalCartQuantity();
+
+>>>>>>> 48193fd (adding context API)
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
   const toggleSignUp = () => {
@@ -94,9 +102,17 @@ const Navbar = () => {
               className="text-gray-600 hover:text-[#f6ad55] transition-colors duration-300 relative"
             >
               <ShoppingCart className="h-6 w-6" />
+<<<<<<< HEAD
               <span className="absolute -top-2 -right-2 bg-[#f6ad55] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md">
                 0
               </span>
+=======
+              {totalQuantity > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#f6ad55] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md">
+                  {totalQuantity}
+                </span>
+              )}
+>>>>>>> 48193fd (adding context API)
             </motion.button>
           </div>
         </div>

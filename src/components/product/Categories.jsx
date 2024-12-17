@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { useEffect, useState } from "react";
 // import { api } from "../../services/api";
 
@@ -51,6 +52,8 @@
 // };
 
 // export default Categories;
+=======
+>>>>>>> 48193fd (adding context API)
 import { useState, useEffect } from "react";
 
 import electronicsImg from "../../assets/images/electronics.webp";
@@ -69,9 +72,13 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
+<<<<<<< HEAD
     // Mock API fetch function (replace with actual API fetch if needed)
     const fetchCategories = () => {
       // Simulating categories fetched from an API
+=======
+    const fetchCategories = () => {
+>>>>>>> 48193fd (adding context API)
       return ["electronics", "jewelery", "men's clothing", "women's clothing"];
     };
 
